@@ -313,7 +313,7 @@ ___
 <br>
 
 # Training Data Logs
-This section presents the logs generated when training the models for each data point. These logs can be accessed [**<ins>here</ins>**](https://drive.google.com/drive/folders/14Wenrjd0a7oiQ9YNCbdcYUQ_RsE4JM0I?usp=sharing).
+This section presents the logs generated when training the models for each data point. These logs can be accessed in the Sample Training Logs folder [**<ins>here</ins>**](./Sample%20Training%20Logs).
 
 
 The files are divided by each output parameter, and each file reflects the details of the models evaluated for that parameter.
