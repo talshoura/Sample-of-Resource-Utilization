@@ -7,19 +7,19 @@ This repo provides a sample of the data gathered and the logs of the regression 
 
 
 ## Table of Contents
-- [Utilization Data Collection](#utilization-data-collection)
-  * [Video File and Stream Data](#video-file-and-stream-data)
-  * [CPU Utilization and Power Data](#cpu-utilization-and-power-data)
-  * [Memory Utilization Data](#memory-utilization-data)
-  * [GPU Utilization and Power Data](#gpu-utilization-and-power-data)
-  * [Network Data](#network-data)
-- [Data Samples](#data-samples)
-  * [Video File and Stream Data Sample](#video-file-and-stream-data-sample)
-  * [CPU Data Sample](#cpu-data-sample)
-  * [Memory Data Sample](#memory-data-sample)
-  * [GPU Data Sample](#gpu-data-sample)
-  * [Network Data Sample](#network-data-sample)
-- [Training Data Logs](#training-data-logs)
+- Utilization Data Collection
+  * Video File and Stream Data
+  * CPU Utilization and Power Data
+  * Memory Utilization Data
+  * GPU Utilization and Power Data
+  * Network Data
+- Data Samples
+  * Video File and Stream Data Sample
+  * CPU Data Sample
+  * Memory Data Sample
+  * GPU Data Sample
+  * Network Data Sample
+- Training Data Logs
 ___
 
 
@@ -48,10 +48,9 @@ ffprobe -v error \
     -of json=c=1 ${video_file_name}
 ```
 
-The information is then parsed and stored in addition to the streaming parameter and the number of displays are then stored in  ```01-file_stream_data.csv```, a sample of output can be seen in [**<ins>here</ins>**](#video-file-and-stream-data-sample)
+The information is then parsed and stored in addition to the streaming parameter and the number of displays are then stored in  ```01-file_stream_data.csv```, a sample of output can be seen in the next section.
 <br>
 
-[Back to Top](#idtext)
 ___
 
 
@@ -77,10 +76,9 @@ powerstat -n -f -t -D 1 ${streamCaptureDuration} >> ${outFile}.txt
   </tr>
 </table>
 
-Sample of the outputs can be seen [**<ins>here</ins>**](#cpu-data-sample)
+Sample of the outputs can be seen in the next section.
 <br>
 
-[Back to Top](#idtext)
 ___
 
 
@@ -106,10 +104,9 @@ free -s 1 -c ${streamCaptureDuration} > ${outFile}.txt
   </tr>
 </table>
 
-Sample of the outputs can be seen [**<ins>here</ins>**](#memory-data-sample)
+Sample of the outputs can be seen in the next section.
 <br>
 
-[Back to Top](#idtext)
 ___
 
 
@@ -135,10 +132,9 @@ nvidia-smi dmon -i 0 -s uctpvme -c ${streamCaptureDuration} > ${outFile}.txt
   </tr>
 </table>
 
-Sample of the outputs can be seen [**<ins>here</ins>**](#gpu-data-sample)
+Sample of the outputs can be seen in the next section.
 <br>
 
-[Back to Top](#idtext)
 ___
 
 
@@ -164,7 +160,7 @@ tshark -i ${portID} -a duration:${streamCaptureDuration} -w ${outFile}.pcap
   </tr>
 </table>
 
-The raw ```.pcap``` files are available [**<ins>here</ins>**](https://drive.google.com/drive/folders/1S4K7TSWXe20ec8mG81PWhZyIwHzH-vCz?usp=sharing)
+The raw ```.pcap``` files are available in the **Sample pcap** folder.
 
 The ```.pcap``` files are then processed using the following command
 ``` bash
@@ -182,10 +178,9 @@ tshark -r ${fileName} -d tcp.port==5554,rtsp -qz io, stat,1,FRAMES,BYTES, \
 "COUNT(rtp.payload)rtp.payload"
 ```
 
-Sample of the outputs can be seen [**<ins>here</ins>**](#network-data-sample)
-<br>
+Sample of the outputs can be seen in the next section.
+<be>
 
-[Back to Top](#idtext)
 ___
 
 
@@ -220,7 +215,6 @@ This section presents samples of the data collected
 | hevc | video | 1280 | 720 | yuv420p | 30000/1001 | 10.010000 | 300 | ./media/003_hevc_720p_qp_25.mp4 | "mov,mp4,m4a,3gp,3g2,mj2" | 1216640 | 972339 | fixed_QP | 20 | hevc | 3 | 3 |
 | hevc | video | 1280 | 720 | yuv420p | 30000/1001 | 10.010000 | 300 | ./media/003_hevc_720p_qp_25.mp4 | "mov,mp4,m4a,3gp,3g2,mj2" | 1216640 | 972339 | fixed_QP | 22 | hevc | 3 | 3 |
 
-[Back to Top](#idtext)
 ___
 
 
@@ -239,7 +233,6 @@ ___
 | 1703844972.615197 | 004_hevc_2K_qp_23-fixed_QP_27_hevc_3_3 | 8.6 | 0.0 | 0.8 | 90.5 | 0.0 | 2 | 12648 | 9344 | 0 | 0 | 44 | 17.93 | 16.81 | 1.12 | 45.00 | 2.22 GHz | 1.92 GHz | 2.90 GHz |
 | 1703844973.615357 | 004_hevc_2K_qp_23-fixed_QP_27_hevc_3_3 | 0.3 | 0.0 | 1.7 | 98.0 | 0.0 | 2 | 4797 | 3554 | 0 | 0 | 22 | 7.95 | 7.83 | 0.13 | 45.00 | 1.94 GHz | 1.52 GHz | 4.37 GHz |
 
-[Back to Top](#idtext)
 ___
 
 
@@ -258,7 +251,6 @@ ___
 | 1707828816.934129 | 028_hevc_4K_qp_27-fixed_QP_40_hevc_2_2 | 32069716 | 2957796 | 276784 | 238104 | 28835136 | 28409580 | 2097148 | 3072 | 2094076 |
 | 1707828817.934804 | 028_hevc_4K_qp_27-fixed_QP_40_hevc_2_2 | 32069716 | 1977860 | 1492260 | 2576 | 28599596 | 29625048 | 2097148 | 3072 | 2094076 |
 
-[Back to Top](#idtext)
 ___
 
 
@@ -277,7 +269,6 @@ ___
 | 1703867410.303194 | 005_hevc_4K_qp_32-fixed_QP_20_hevc_3_3 | 0 | 16 | 3 | 0 | 0 | 0 | 0 | 7000 | 1987 | 0 | 0 | 37 | 57 | - | 0 | 0 | 9 | 3 | 0 | - | - | 0 |
 | 1703867411.418285 | 005_hevc_4K_qp_32-fixed_QP_20_hevc_3_3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7000 | 1987 | 0 | 0 | 32 | 57 | - | 0 | 0 | 9 | 3 | 0 | - | - | 0 |
 
-[Back to Top](#idtext)
 ___
 
 
@@ -297,7 +288,6 @@ ___
 | 011_hevc_4K_qp_47-fixed_QP_27_hevc_2_2.pcap | 26 | 4 | 378 | 2 | 108 | 2 | 270 | 0.000611 | 0.000611 | 0.000611 | 0.000000 | 0.000000 | 0.000000 | 0 |
 
 
-[Back to Top](#idtext)
 ___
 
 
@@ -313,16 +303,18 @@ ___
 <br>
 
 # Training Data Logs
-This section presents the logs generated when training the models for each data point. These logs can be accessed in the Sample Training Logs folder [**<ins>here</ins>**](./Sample%20Training%20Logs).
+This section presents the logs generated when training the models for each data point. These logs can be accessed in the **Sample Training Logs** folder.
 
 
 The files are divided by each output parameter, and each file reflects the details of the models evaluated for that parameter.
 The files are divided as follows:
--	Training linear models, where 10 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	support vector regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	Gaussian process regression models, where 50 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	Regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	Neural network regression models, where 50 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	Kernel functions regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
--	A summary of the best model performance from each category against the testing data.
 
+<ul>
+    <li>	Training linear models, where 10 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	support vector regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	Gaussian process regression models, where 50 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	Regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	Neural network regression models, where 50 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	Kernel functions regression models, where 20 different models would be trained and evaluated. The best model’s parameters will be printed out.
+    <li>	A summary of the best model performance from each category against the testing data.
+</ul>
